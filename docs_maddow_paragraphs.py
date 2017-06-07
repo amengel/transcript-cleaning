@@ -7,7 +7,7 @@ import itertools # for combinding lists of lists into single list
 
 
 ## specify file path here
-direct = 'TV Transcripts/Maddow/All'
+direct = '~/Dropbox/Vandy/Prospectus Prelims/race rhetoric/case studies/Race stories/TV Transcripts/Maddow/All'
 years = ['2008','2009','2010','2011','2012', '2013', '2014', '2015', '2016']
 rows = [['show_id', 'document_id', 'date', 'show', 'text', 'speaker']]
 
@@ -184,7 +184,7 @@ for y in years:
 						rows.append(row)
 
 # ## Writing everything to a CSV
-with open('Maddow0816_graphs_out1_all.csv', 'w') as f:
+with open('~/Dropbox/Vandy/Prospectus Prelims/race rhetoric/case studies/Race stories/Maddow0816_graphs_out1_all.csv', 'w') as f:
 	doc_csv = csv.writer(f, delimiter='|')
 	doc_csv.writerows(rows)
 

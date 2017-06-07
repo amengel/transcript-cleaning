@@ -6,7 +6,7 @@ import string # to test for punctuation
 import itertools # for combinding lists of lists into single list
 
 ## specify file path here
-direct = 'TV Transcripts/Oreilly/All'
+direct = '~/Dropbox/Vandy/Prospectus Prelims/race rhetoric/case studies/Race stories/TV Transcripts/Oreilly/All'
 years = ['1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008','2009','2010','2011','2012',
 '2013', '2014', '2015', '2016']
 rows = [['show_id', 'document_id', 'date', 'show', 'text', 'speaker']]
@@ -189,7 +189,7 @@ for y in years:
 						rows.append(row)
 
 # ## Writing everything to a CSV
-with open('Oreilly9916_graphs_out1_all.csv', 'w') as f:
+with open('~/Dropbox/Vandy/Prospectus Prelims/race rhetoric/case studies/Race stories/Oreilly9916_graphs_out1_all.csv', 'w') as f:
 	doc_csv = csv.writer(f, delimiter='|')
 	doc_csv.writerows(rows)
 
