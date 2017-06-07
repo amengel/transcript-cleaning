@@ -144,21 +144,29 @@ for y in years:
 
 				for b in xrange(0,len(body)):
 					# eliminating some inappropriate documents based on transitions to audio/video clips
-					if body[b].lower().strip()[0:6] == '(begin' and len(body[b]) <= 30:
+					if 'begin' in body[b].lower().strip()[0:6] and len(body[b]) <= 30:
 						pass
-					elif body[b].lower().strip()[0:4] == '(end' and len(body[b]) <= 30:
+					elif body[b].lower().strip()[0] == '(' and body[b].lower().strip()[-1] == ')':
 						pass
-					elif body[b].lower().strip()[0:11] == '(commercial' and len(body[b]) <= 25:
+					elif 'end' in body[b].lower().strip()[0:4] and 'video' in body[b].lower().strip() and len(body[b]) < 40:
+						pass
+					elif '(com' in body[b].lower().strip()[0:5] and 'break' in body[b].lower().strip() and len(body[b]) < 40:
 						pass
 					elif 'laughter' in body[b].lower().strip() and len(body[b]) <= 15:
 						pass
 					elif 'unintelligible' in body[b].lower().strip() and len(body[b]) <= 18:
 						pass
+					elif 'audible)' in body[b].lower().strip() and len(body[b]) <= 20:
+						pass
+					elif 'crosstalk' in body[b].lower().strip() and len(body[b]) <= 20:
+						pass	
 					elif body[b].lower().strip()[0:6] == '(cross' and len(body[b]) <= 15:
 						pass
 					elif 'cheers' in body[b].lower().strip()[:10] and len(body[b]) <= 22:
 						pass
-					elif 'applause' in body[b].lower().strip() and len(body[b]) <= 22:
+					elif 'music' in body[b].lower().strip()[:6] and len(body[b]) <= 50:
+						pass
+					elif 'applause' in body[b].lower().strip() and len(body[b]) <= 40:
 						pass
 					elif body[b].lower().strip()[0:25] == 'this is a rush transcript':
 						pass
