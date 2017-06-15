@@ -146,6 +146,7 @@ for y in years:
 					# eliminating some inappropriate documents based on transitions to audio/video clips
 					if 'begin' in body[b].lower().strip()[0:6] and len(body[b]) <= 30:
 						pass
+					## need to make sure these are the only 2 parens in the line
 					elif body[b].lower().strip()[0] == '(' and body[b].lower().strip()[-1] == ')':
 						pass
 					elif 'end' in body[b].lower().strip()[0:4] and 'video' in body[b].lower().strip() and len(body[b]) < 40:
